@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="logo">
+        <img src="images/logo.svg" alt="Logo of Splitter." />
+      </div>
+      <div class="calc-container">
+        <div class="input">
+          <div class="bill">
+            <h1>Bill</h1>
+            <img src="images/icon-dollar.svg" alt="Dollar-sign." />
+            <input
+              id="billAmount"
+              type="number"
+              oninput="limitDecimal(this)"
+              placeholder="0"
+            />
+          </div>
+          <div class="tip">
+            <h1>Select Tip %</h1>
+            <div class="tip__buttons">
+              <button id="fivePercent" class="btn" value="0.05">5%</button>
+              <button id="tenPercent" class="btn" value="0.10">10%</button>
+              <button id="fifteenPercent" class="btn" value="0.15">15%</button>
+              <button id="twentyFivePercent" class="btn" value="0.25">
+                25%
+              </button>
+              <button id="fiftyPercent" class="btn" value="0.50">50%</button>
+              <input
+                id="customPercent"
+                oninput="limitInput(this)"
+                type="number"
+                maxlength="2"
+                placeholder="Custom"
+              />
+            </div>
+          </div>
+          <div class="num">
+            <h1>Number of People</h1>
+            <!-- <span>Can't be 0.</span> -->
+
+            <img src="images/icon-person.svg" alt="" />
+            <input
+              id="peopleAmount"
+              oninput="limitInput(this)"
+              type="number"
+              maxlength="3"
+              placeholder="0"
+            />
+          </div>
+        </div>
+        <div class="results">
+          <div class="results__tip">
+            <h1>
+              Tip Amount
+              <br /><span>/ person</span>
+            </h1>
+            <span id="tip-amount">0.00</span>
+          </div>
+          <div class="results__total">
+            <h1>
+              Total
+              <br /><span>/ person</span>
+            </h1>
+            <span id="total">0.00</span>
+          </div>
+          <button class="btn btn--results">Reset</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Alyn Aug</a>.
+      </div>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>
